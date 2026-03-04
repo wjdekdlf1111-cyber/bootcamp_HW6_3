@@ -3,6 +3,9 @@
 # sunspots.csv 파일이 에디터 폴더의 data/아래에 있어야 합니다.
 # 연도범위, 히스토그램 구간 수, 추세선 차수, 산점도 점 크기, 산점도 투명도를 조절할 수 있는 기능을 추가합니다.
 # --------------------------------------------
+import matplotlib
+matplotlib.use("Agg")
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -168,4 +171,5 @@ try:
 
 except Exception as e:
     st.error(f"오류가 발생했습니다: {e}")
+
     st.info("데이터 파일의 구조를 확인해주세요. 'data/sunspots.csv' 파일이 존재하고 'YEAR'와 'SUNACTIVITY' 컬럼이 있어야 합니다.")
